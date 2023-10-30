@@ -13,29 +13,29 @@ class _HomePageState extends State<HomePage> {
   int isSelected = 0;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        children: [
-          const Text(
-            "Nuestros Productos",
-            style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              _buildProductCategory(enable: 0, name: "Todos los Productos"),
-              _buildProductCategory(enable: 1, name: "Snekers"),
-              _buildProductCategory(enable: 1, name: "Jackets"),
-            ],
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Expanded(
-            child: _buildAllProducts()
-          )
-        ],
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            const Text(
+              "Nuestros Productos",
+              style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _buildProductCategory(enable: 0, name: "Todos los Productos"),
+                _buildProductCategory(enable: 1, name: "Snekers"),
+                _buildProductCategory(enable: 1, name: "Jackets"),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Expanded(child: _buildAllProducts())
+          ],
+        ),
       ),
     );
   }

@@ -36,7 +36,21 @@ class _ProductCardState extends State<ProductCard> {
               child: Image.asset(
                 widget.product.image,
                 fit: BoxFit.cover,
-              ))
+              )),
+          Text(
+            widget.product.name,
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            widget.product.category,
+            style: const TextStyle(
+                fontSize: 14, color: Colors.blue, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            '\$' '${widget.product.price}',
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
         ],
       ),
     );
